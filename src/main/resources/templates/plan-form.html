@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GymPro | Create Plan</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="/" class="nav-link">← Back to Dashboard</a>
+        </div>
+
+        <h1>Create Membership Plan</h1>
+
+        <form action="#" th:action="@{/plans}" th:object="${plan}" method="post">
+            <div class="form-group">
+                <label>Plan Name</label>
+                <input type="text" th:field="*{planName}" required placeholder="e.g. Gold Membership">
+            </div>
+
+            <div class="form-group">
+                <label>Duration (Months)</label>
+                <select th:field="*{durationMonths}">
+                    <option value="1">1 Month</option>
+                    <option value="3">3 Months</option>
+                    <option value="6">6 Months</option>
+                    <option value="12">12 Months (1 Year)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" step="0.01" th:field="*{price}" required>
+            </div>
+
+            <button type="submit" class="btn">Create Plan</button>
+        </form>
+    </div>
+</body>
+
+</html>

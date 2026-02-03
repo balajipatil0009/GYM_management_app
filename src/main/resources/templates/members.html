@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GymPro | Member Directory</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="/" class="nav-link">← Back to Dashboard</a>
+            <a href="/add-member" class="btn" style="margin-left: auto; padding: 0.5rem 1rem; font-size: 0.9rem;">+ New
+                Member</a>
+        </div>
+
+        <h1>Member Directory</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="member : ${members}">
+                    <td th:text="${member.id}">1</td>
+                    <td th:text="${member.name}">John Doe</td>
+                    <td th:text="${member.email}">john@example.com</td>
+                    <td th:text="${member.phone}">123-456-7890</td>
+                    <td>
+                        <span th:text="${member.status}"
+                            th:style="${member.status == 'Active' ? 'color: green; font-weight: bold;' : 'color: red;'}">Active</span>
+                    </td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(members)}">
+                    <td colspan="5" style="text-align: center; color: var(--secondary-color);">No members found.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

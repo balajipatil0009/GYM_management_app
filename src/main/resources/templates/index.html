@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GymPro | Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">💪 GymPro</a>
+            <div class="nav-links">
+                <a href="/">Dashboard</a>
+                <a href="/members">Members</a>
+                <a href="/trainers">Trainers</a>
+                <a href="/enrollments">Enrollments</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to GymPro</h1>
+                <p class="hero-subtitle">Transform Your Body, Transform Your Life</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="/add-member" class="btn" style="font-size: 1.2rem; padding: 1rem 2rem;">Join Now</a>
+                    <a href="/trainers" class="btn btn-secondary" style="font-size: 1.2rem; padding: 1rem 2rem;">Meet
+                        Trainers</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features-section">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏋️‍♂️</div>
+                    <h3>Top Equipment</h3>
+                    <p>State-of-the-art machines and weights to help you reach your peak performance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧘‍♀️</div>
+                    <h3>Diverse Classes</h3>
+                    <p>From Yoga to CrossFit, we have classes that fit every fitness level and interest.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Expert Trainers</h3>
+                    <p>Our certified personal trainers are here to guide your fitness journey.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <h2 class="section-title">Club Overview</h2>
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="stat-value" th:text="${memberCount}">0</div>
+                <div class="stat-label">Active Members</div>
+            </div>
+            <div class="card">
+                <div class="stat-value" th:text="${todayAttendance}">0</div>
+                <div class="stat-label">Today's Check-ins</div>
+            </div>
+            <div class="card">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Access Available</div>
+            </div>
+        </div>
+
+        <!-- Portfolio -->
+        <h2 class="section-title">Our Facility</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="/images/portfolio1.png" alt="Cardio Zone">
+            </div>
+            <div class="portfolio-item">
+                <img src="/images/portfolio2.png" alt="Weight Training">
+            </div>
+            <div class="portfolio-item">
+                <img src="/images/portfolio3.png" alt="Yoga Studio">
+            </div>
+        </div>
+
+        <!-- Quick Actions (moved to bottom or keep visible) -->
+        <h2 class="section-title">Management Actions</h2>
+        <div class="actions-grid" style="justify-content: center; margin-bottom: 4rem;">
+            <a href="/add-member" class="btn">Add New Member</a>
+            <a href="/add-trainer" class="btn">Add Trainer</a>
+            <a href="/add-plan" class="btn">Create Plan</a>
+            <a href="/enroll-member" class="btn">Enroll Member</a>
+            <a href="/log-attendance" class="btn">Log Attendance</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>GymPro Manager</h3>
+                    <p>The best place to manage your fitness business and help your members achieve their goals.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Dashboard</a></li>
+                        <li><a href="/members">Directory</a></li>
+                        <li><a href="/trainers">Trainers</a></li>
+                        <li><a href="/enrollments">Membership Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>📍 123 Fitness Blvd, Muscle City</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@gympro.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GymPro Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
